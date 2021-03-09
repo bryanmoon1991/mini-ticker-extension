@@ -25,7 +25,7 @@ const plugins = [
 ];
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: {
 		popup: './src/popup-page/popup.tsx',
 	},
