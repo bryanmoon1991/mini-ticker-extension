@@ -21,11 +21,13 @@ const plugins = [
 	new CopyWebpackPlugin({
 		patterns: [{ from: 'public', to: '.' }],
 	}),
+	//clears dist folder every time we compile
 	new CleanWebpackPlugin(),
 ];
 
 module.exports = {
-	mode: 'production',
+	mode: 'development',
+	devtool: 'cheap-module-source-map',
 	entry: {
 		popup: './src/popup-page/popup.tsx',
 	},
