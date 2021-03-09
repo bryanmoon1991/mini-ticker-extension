@@ -19,7 +19,8 @@
 	"homepage": "https://github.com/bryanmoon1991/mini-ticker-extension#readme",
 	"dependencies": {
 		"react": "^17.0.1",
-		"react-dom": "^17.0.1"
+		"react-dom": "^17.0.1",
+		"stocksocket": "^1.1.2"
 	},
 	"devDependencies": {
 		"@types/chrome": "^0.0.133",
@@ -27,6 +28,7 @@
 		"@types/react-dom": "^17.0.2",
 		"clean-webpack-plugin": "^3.0.0",
 		"copy-webpack-plugin": "^8.0.0",
+		"csstype": "^3.0.7",
 		"html-webpack-plugin": "^5.3.1",
 		"ts-loader": "^8.0.17",
 		"typescript": "^4.2.3",

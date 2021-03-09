@@ -1,15 +1,29 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useRef } from 'react';
 import { render } from 'react-dom';
-
-const divBar = document.createElement('div');
-divBar.style.color = 'red';
+import parent from './parent';
+import * as CSS from 'csstype';
+const StockSocket = require('stocksocket');
 
 interface Props {}
 
 export const TickerBar: FC<Props> = () => {
-	return <p>hello world</p>;
+	interface TickerHash {}
+
+	const [tickers, setTickers] = useState<TickerHash>();
+
+	const tickerStyle: CSS.Properties = {
+		padding: 0,
+	};
+
+	const stockPriceChanged = (data) => {
+		console.log(data);
+	};
+
+	StockSocket.addTickers(['TSLA', 'NIO', 'NNDM', 'ETH-USD'], stockPriceChanged);
+
+	return <p style={tickerStyle}>hello world</p>;
 };
 
-render(<TickerBar />, divBar);
+render(<TickerBar />, parent);
 
-document.querySelector('body')?.prepend(divBar);
+document.querySelector('body')?.prepend(parent);
