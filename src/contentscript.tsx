@@ -1,11 +1,17 @@
 import React, { FC, useState, useRef } from 'react';
 import { render } from 'react-dom';
-import parent from './parent';
 import * as CSS from 'csstype';
 import StockSocket from 'stocksocket';
-// const StockSocket = require('stocksocket');
 
 interface Props {}
+
+const divBar = document.createElement('div');
+divBar.className = 'mini-ticker-extension';
+divBar.style.backgroundColor = 'red';
+divBar.style.position = 'sticky';
+divBar.style.zIndex = '100000';
+divBar.style.height = '50px';
+divBar.style.top = '0';
 
 export const TickerBar: FC<Props> = () => {
 	interface TickerHash {}
@@ -25,6 +31,6 @@ export const TickerBar: FC<Props> = () => {
 	return <p style={tickerStyle}>hello world</p>;
 };
 
-render(<TickerBar />, parent);
+render(<TickerBar />, divBar);
 
-document.querySelector('body')?.prepend(parent);
+document.querySelector('body')?.prepend(divBar);
