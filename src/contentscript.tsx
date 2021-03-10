@@ -2,7 +2,8 @@ import React, { FC, useState, useRef } from 'react';
 import { render } from 'react-dom';
 import parent from './parent';
 import * as CSS from 'csstype';
-const StockSocket = require('stocksocket');
+import StockSocket from 'stocksocket';
+// const StockSocket = require('stocksocket');
 
 interface Props {}
 
@@ -15,7 +16,7 @@ export const TickerBar: FC<Props> = () => {
 		padding: 0,
 	};
 
-	const stockPriceChanged = (data) => {
+	const stockPriceChanged = (data: any) => {
 		console.log(data);
 	};
 
